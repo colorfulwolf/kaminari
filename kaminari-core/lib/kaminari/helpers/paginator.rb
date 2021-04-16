@@ -26,7 +26,7 @@ module Kaminari
 
       # render given block as a view template
       def render(&block)
-        instance_eval(&block) if @options[:total_pages] > 1
+        instance_eval(&block) if @options[:total_pages] > 1 || @options[:always_show]
 
         # This allows for showing fall-back HTML when there's only one page:
         #
